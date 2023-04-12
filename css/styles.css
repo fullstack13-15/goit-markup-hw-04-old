@@ -8,6 +8,7 @@
   --button-active-color: #2196f3;
   --button-color: #f5f4fa;
   --footer-color: #2f303a;
+  --inactive-social-icon-color: #afb1b8;
 }
 
 /* reset */
@@ -37,7 +38,10 @@ body {
   background-color: var(--backgroud-main-color);
 }
 footer {
-  padding: 60px;
+  padding: 60px 215px;
+  display: flex;
+  justify-content: space-around;
+  gap: 70px;
 }
 
 /* Powtarzające się elementy */
@@ -79,6 +83,7 @@ footer {
 .contact-header:focus,
 .contact-header:active {
   color: var(--button-active-color);
+  fill: var(--button-active-color);
 }
 .contact-header {
   font-weight: 500;
@@ -86,8 +91,9 @@ footer {
   line-height: 1.17;
   letter-spacing: 0.02em;
   color: var(--font-second-color);
+  margin-right: 30px;
+  fill: var(--font-second-color);
   display: flex;
-  gap: 50px;
 }
 
 .section {
@@ -98,12 +104,33 @@ footer {
   width: 100%;
   margin: 0 auto;
 }
+
+/* Ikony w header */
+
+.icon-header {
+  margin-right: 10px;
+}
+.icon-header:hover,
+.icon-header:focus,
+.icon-header:active {
+  fill: var(--button-active-color);
+}
+
 /* Agencja-index */
 .header {
+  background-image: linear-gradient(to top, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    url(/goit-markup-hw-04/images/background-image.jpg);
   background-color: var(--backgroud-second-color);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  max-width: 1600px;
   text-align: center;
   padding-top: 200px;
   padding-bottom: 200px;
+}
+.header-section {
+  padding: 0;
 }
 .main-header {
   font-weight: 900;
@@ -133,6 +160,9 @@ footer {
 .lorem {
   padding-bottom: 0;
 }
+.lorem-icon {
+  margin-bottom: 30px;
+}
 .main-site-title {
   font-weight: 700;
   font-size: 14px;
@@ -143,7 +173,7 @@ footer {
 }
 .main-site-title-description {
   font-size: 14px;
-
+  font-weight: 400;
   line-height: 1.71;
   letter-spacing: 0.03em;
   color: var(--font-second-color);
@@ -178,7 +208,6 @@ footer {
   letter-spacing: 0.03em;
   color: var(--font-second-color);
   margin-top: 10px;
-  padding-bottom: 30px;
 }
 .our-team-images {
   margin-top: 50px;
@@ -191,6 +220,55 @@ footer {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 1px rgba(0, 0, 0, 0.14),
     0 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0 0 4px 4px;
+}
+
+.social-links-icons {
+  padding: 16px 32px 30px 32px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+.social-links-icons > li {
+  width: 44px;
+  height: 44px;
+  padding: 12px;
+  border-radius: 50%;
+  fill: var(--inactive-social-icon-color);
+}
+.social-links-icons > li:hover,
+.social-links-icons > li:focus {
+  cursor: pointer;
+  background-color: var(--button-active-color);
+}
+.social-links-icons > li:hover svg,
+.social-links-icons > li:focus svg {
+  fill: var(--backgroud-main-color);
+}
+.our-clients {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+.our-clients > li {
+  padding: 16px 32px;
+  border-radius: 4px;
+  width: 170px;
+  height: 92px;
+  border: 1px solid var(--inactive-social-icon-color);
+}
+.our-clients svg {
+  fill: var(--inactive-social-icon-color);
+}
+
+.our-clients > li:hover,
+.our-clients > li:focus {
+  cursor: pointer;
+  border-color: var(--button-active-color);
+}
+.our-clients > li:hover svg,
+.our-clients > li:focus svg {
+  fill: var(--button-active-color);
 }
 /* Portfolio */
 
@@ -229,6 +307,12 @@ footer {
   flex-wrap: wrap;
   gap: 30px;
 }
+.portfolio-images > li:hover,
+.portfolio-images > li:focus {
+  cursor: pointer;
+  box-shadow: 1px 4px 6px 0px rgba(0, 0, 0, 0.16), 0px 4px 4px 0px rgba(0, 0, 0, 0.06),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.12);
+}
 .portfolio-card {
   width: 370px;
   padding-bottom: 20px;
@@ -251,6 +335,9 @@ footer {
   letter-spacing: 0.06em;
 }
 /* Stopka */
+.footer-logo {
+  max-width: 246px;
+}
 
 .footer-studio {
   color: var(--backgroud-main-color);
@@ -268,4 +355,33 @@ footer {
 }
 .footer-address-list > li {
   margin-top: 9px;
+}
+
+.footer-social {
+  padding-right: 70px;
+}
+.join-us {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  color: var(--backgroud-main-color);
+}
+.footer-social-icons {
+  margin-top: 20px;
+  display: flex;
+  gap: 22px;
+}
+.footer-social-icons > li {
+  width: 44px;
+  height: 44px;
+  padding: 12px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  fill: var(--backgroud-main-color);
+}
+.footer-social-icons > li:hover,
+.footer-social-icons > li:focus {
+  cursor: pointer;
+  background-color: var(--button-active-color);
 }
